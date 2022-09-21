@@ -1,0 +1,342 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YHEH9NKSG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6YHEH9NKSG');
+</script>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+  <title>Blogs by Clove</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" type="text/css" href="decor/bootstrap.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <link href="decor/style.css" rel="stylesheet"/>
+  <link href="decor/responsive.css" rel="stylesheet"/>
+  <script type = "module" src = "blog.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+
+.blog_cards_container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  height: 550px;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+
+}
+
+.card__body {
+  padding: 1rem;
+  gap: .5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag + .tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+  </style>
+
+<style>
+
+.r-title{
+    margin-top: var(--rTitleMarginTop, 0) !important;
+    margin-bottom: var(--rTitleMarginBottom, 0) !important;
+}
+
+.screen-reader{
+  width: var(--screenReaderWidth, 1px) !important;
+  height: var(--screenReaderHeight, 1px) !important;
+  padding: var(--screenReaderPadding, 0) !important;
+  border: var(--screenReaderBorder, none) !important;
+  position: var(--screenReaderPosition, absolute) !important;
+  clip: var(--screenReaderClip, rect(1px, 1px, 1px, 1px)) !important;
+  overflow: var(--screenReaderOverflow, hidden) !important;
+}
+
+.popup:not(:target){
+  display: none;
+}
+
+.popup:target{
+  width: 100%;
+  height: 100vh;
+  
+  display: flex;
+ 
+  position: fixed;
+  top: 0;
+  right: 0;  
+}
+
+.a{
+  background-color: black
+}
+
+.popup::before{
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+
+  position: fixed;
+  left: 0;
+  top: 50%;
+}
+
+.popup::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #f0f0f0;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+}
+
+.popup__container{
+  box-sizing: border-box;  
+  padding: 5% 15%;
+
+  height: calc(100vh - 40px); 
+  margin: auto; 
+  overflow: auto; 
+  overscroll-behavior: contain; 
+}
+
+.popup__title{
+  --rTitleMarginBottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.popup__close{
+  width: 2rem;
+  height: 2rem;
+  background-image: url("https://i.ibb.co/J3RtZTL/x-symbol-318-1407.png");
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.popup::before{
+  will-change: height, top;
+  animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
+}
+
+.popup::after{
+  will-change: width, opacity;
+  animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
+}
+
+@keyframes line-animation{
+
+  0%{
+    width: 0;
+    opacity: 1;
+  }
+
+  99%{
+    width: 100%;
+    opacity: 1;
+  }
+
+  100%{
+    width: 100%;
+    opacity: 0;
+  }  
+}
+
+@keyframes open-animation{
+
+  0%{
+    height: 0;
+    top: 50%;
+  }
+
+  100%{
+    height: 100vh;
+    top: 0;
+  }
+}
+
+.popup__container{
+  animation: fade .5s ease-out 1.3s both;
+}
+
+@keyframes fade{
+
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+</style>
+
+</head>
+
+<body class="sub_page" id = "thisIsBody">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="index.html">
+                <img src="images/clove_leaf.png" width = "50px" style= "margin-right: 10px;" alt=""/>
+                <span style = "font-size: 40px;">
+                  Clove
+                </span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex  flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html" style = "font-size: 20px;">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="howToVideos.html" style = "font-size: 20px;">How To Videos<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html" style = "font-size: 20px;">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" target = "_blank" href="https://dashboard.joinclove.org/pages-sign-in.html" style = "font-size: 20px;">Login</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div id="otp"></div>
+
+   
+
+    <center>
+      <div class="container">
+        
+        <br><br>
+        <h2 style = "border-bottom: 1px solid #feb543; padding-bottom: 5px;"><b>
+          How To Videos
+        </b></h2>
+        <br>
+        <br>
+        <h3><b>
+          Using the Dashboard & Creating a Subscription
+        </b></h3>
+        <div class="custom_heading-container">
+          <video width = "800px" controls="controls"> 
+              <source src="clove 2.mov" type="video/mp4"> 
+          </video> 
+          
+        </div>
+        
+      </div>
+      <div class="container">
+        <br><br><br>
+        <h3><b>
+          Downloading the Chrome Extension
+        </b></h3>
+        <div class="custom_heading-container">
+          <video width = "800px" controls="controls"> 
+              <source src="clove2.1.mov" type="video/mp4"> 
+          </video> 
+        </div>
+    
+      </div>
+    </center>
+    <br><br><br>
+  <!-- <div class="footer_bg"></div>
+    <section class="container-fluid footer_section">
+      <p>
+        © 2022 All Rights Reserved By
+        <a href="https://joinclove.org/">Clove</a>
+      </p>
+    </section>
+  </div> -->
+
+  <script type="text/javascript" src="javascript/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="javascript/bootstrap.js"></script>
+</body>
+</html>
