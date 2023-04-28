@@ -1,4 +1,4 @@
-# Clove Dashboard Website
+# Clove Main Website
 
 Clove is a free extension that makes offsetting carbon emissions from online purchases simple and easy!
 
